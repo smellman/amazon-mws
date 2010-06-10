@@ -74,7 +74,7 @@ Gem::Specification.new do |s|
      "examples/xsd/amzn-base.xsd",
      "examples/xsd/amzn-envelope.xsd",
      "examples/xsd/amzn-header.xsd",
-     "lib/amazonmws/amazonmws.rb",
+     "lib/amazonmws.rb",
      "lib/amazonmws/mws/authentication.rb",
      "lib/amazonmws/mws/authentication/query_string.rb",
      "lib/amazonmws/mws/authentication/signature.rb",
