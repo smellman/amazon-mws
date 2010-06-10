@@ -58,8 +58,8 @@ require 'mws/authentication/signature'
 
 
 AmazonMWS::Base.class_eval do
-  include MWS::Feed
-  include MWS::Report
+  include AmazonMWS::Feed
+  include AmazonMWS::Report
 end
 
 require_library_or_gem 'xmlsimple', 'xml-simple' unless defined? XmlSimple
