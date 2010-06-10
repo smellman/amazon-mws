@@ -1,4 +1,4 @@
-class Amazon::MWS::Connection
+class AmazonMWS::Connection
   class RequestBuilder
     attr_accessor :request
 
@@ -31,12 +31,12 @@ class Amazon::MWS::Connection
     # sent, protecting you from corrupted descriptive or pricing product data appearing on Amazon.com. 
     #
     def add_host
-      @request['Host'] = Amazon::MWS::DEFAULT_HOST
+      @request['Host'] = AmazonMWS::DEFAULT_HOST
       return self
     end
     
     def add_user_agent
-      @request['User-Agent'] = "Amazon::MWS/#{Amazon::MWS::Version} (Language=Ruby)"
+      @request['User-Agent'] = "AmazonMWS/#{AmazonMWS::Version} (Language=Ruby)"
       return self
     end
     

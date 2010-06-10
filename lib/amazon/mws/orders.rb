@@ -1,9 +1,6 @@
-module Amazon
-  module MWS
-    
-    class Orders
-      
-    end
+module AmazonMWS
+  
+  class Orders
     
   end
 end

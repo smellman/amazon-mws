@@ -1,5 +1,4 @@
-module Amazon
-  module MWS
+module AmazonMWS
     
     class ResponseError < Response
       xml_name "ErrorResponse"
@@ -11,5 +10,4 @@ module Amazon
       xml_reader :request_id   
     end
     
-  end
 end

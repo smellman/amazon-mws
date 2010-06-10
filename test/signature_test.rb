@@ -7,7 +7,7 @@ class SignatureTest < Test::Unit::TestCase
   end
   
   def test_sign_with_string_keys
-    signature = Amazon::MWS::Authentication::Signature.new(
+    signature = AmazonMWS::Authentication::Signature.new(
       {"devil" => "666"}, 
       {:verb => :get, :secret_access_key => "beelzebub"}
     )
@@ -18,7 +18,7 @@ class SignatureTest < Test::Unit::TestCase
   end
   
   def test_sign_with_symbol_keys
-    signature = Amazon::MWS::Authentication::Signature.new(
+    signature = AmazonMWS::Authentication::Signature.new(
       {:devil => "666"}, 
       {:verb => :get, :secret_access_key => "beelzebub"}
     )

@@ -3,16 +3,16 @@ require 'yaml'
 
 
 # import the namespace
-include Amazon::MWS
+include AmazonMWS
   
 class FeedTest < Test::Unit::TestCase
   def setup
     config = YAML.load_file( File.join(File.dirname(__FILE__), '../lib/amazon/mws.yml') )
     
-    AWS::MWS::Base.establish_connection!(
+    AmazonMWS::Base.establish_connection!(
       config['production']
     )
-    AWS::MWS::Base.debug = true
+    AmazonMWS::Base.debug = true
   end
   
   def test_request

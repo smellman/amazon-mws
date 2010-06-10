@@ -1,14 +1,12 @@
-module Amazon
-  module MWS
+module AmazonMWS
     
-    class ManageReportScheduleResponse < Response
-      xml_name "ManageReportScheduleResponse"
-      result = "ManageReportScheduleResult"
+  class ManageReportScheduleResponse < Response
+    xml_name "ManageReportScheduleResponse"
+    result = "ManageReportScheduleResult"
 
-      xml_reader :count, :in =>  result, :as => Integer
-      xml_reader :request_id, :in => "ResponseMetadata"      
-      xml_reader :report_schedule, :in => result, :as => ReportSchedule
-    end
-    
+    xml_reader :count, :in =>  result, :as => Integer
+    xml_reader :request_id, :in => "ResponseMetadata"      
+    xml_reader :report_schedule, :in => result, :as => ReportSchedule
   end
+
 end

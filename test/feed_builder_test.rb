@@ -5,7 +5,7 @@ class FeedTest < Test::Unit::TestCase
   end
   
   def test_nothing
-    puts AWS::MWS::FeedBuilder.new(:product, {
+    puts AmazonMWS::FeedBuilder.new(:product, {
       "Product" => "somethinglame", 
       "NestedHash" => {"hash"=> 7},
       "NestedArray" => [{"NA1"=> 1}, {"NA2"=> 2}]

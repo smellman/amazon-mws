@@ -1,7 +1,7 @@
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "amazon-mws"
+    gemspec.name = "amazonmws"
     gemspec.summary = "A Ruby Wrapper for the Amazon MWS API"
     gemspec.description = "A Ruby Wrapper for the Amazon MWS API"
     gemspec.email = "david.michael@sonymusic.com"

@@ -1,5 +1,4 @@
-module Amazon
-  module MWS
+module AmazonMWS
     
     class RequestReportResponse < Response
       xml_name "RequestReportResponse"
@@ -9,6 +8,5 @@ module Amazon
       xml_reader :request_id, :in => "ResponseMetadata"      
       xml_reader :report_request, :in => result, :as => ReportRequest
     end
-    
-  end
+
 end

@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 require 'mocha'
 include AWS::MWS
 
-AWS::MWS::Base.debug = true
+AmazonMWS::Base.debug = true
 
 class FeedTest < Test::Unit::TestCase 
   def setup

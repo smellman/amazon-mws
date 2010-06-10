@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require 'yaml'
 
-AWS::MWS::Base.debug = true
+AmazonMWS::Base.debug = true
 
 class RequestTest < Test::Unit::TestCase
   def setup

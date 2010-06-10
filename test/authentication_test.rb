@@ -10,6 +10,6 @@ class AuthenticationTest < Test::Unit::TestCase
   end
   
   def test_first
-    puts Amazon::MWS::Authentication::QueryString.new(@request, @access_key_id, @secret_access_key, @merchant_id, @marketplace_id)
+    puts AmazonMWS::Authentication::QueryString.new(@request, @access_key_id, @secret_access_key, @merchant_id, @marketplace_id)
   end
 end

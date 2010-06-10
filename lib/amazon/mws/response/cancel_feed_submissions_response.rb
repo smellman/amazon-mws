@@ -1,14 +1,12 @@
-module Amazon
-  module MWS
+module AmazonMWS
 
-    class CancelFeedSubmissionsResponse < Response
-      xml_name "CancelFeedSubmissionsResponse"
-      result = "CancelFeedSubmissionsResult"
+  class CancelFeedSubmissionsResponse < Response
+    xml_name "CancelFeedSubmissionsResponse"
+    result = "CancelFeedSubmissionsResult"
 
-      xml_reader :count, :in => result, :as => Integer
-      xml_reader :feed_submissions, :as => [FeedSubmission], :in => result
-      xml_reader :request_id, :in => "ResponseMetadata"
-    end
-    
+    xml_reader :count, :in => result, :as => Integer
+    xml_reader :feed_submissions, :as => [FeedSubmission], :in => result
+    xml_reader :request_id, :in => "ResponseMetadata"
   end
+    
 end

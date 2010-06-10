@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 
-include Amazon::MWS
+include AmazonMWS
 
 class ResponseTest < Test::Unit::TestCase
   

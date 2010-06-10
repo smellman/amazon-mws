@@ -1,4 +1,4 @@
-class Amazon::MWS::Connection
+class AmazonMWS::Connection
 
   module Management #:nodoc:
     def self.included(base)
@@ -7,12 +7,12 @@ class Amazon::MWS::Connection
       base.extend ClassMethods
     end
   
-    # Manage the creation and destruction of connections for Amazon::MWS::Base and its subclasses. Connections are
+    # Manage the creation and destruction of connections for AmazonMWS::Base and its subclasses. Connections are
     # created with establish_connection!.
     module ClassMethods
       # Creates a new connection with which to make requests to the S3 servers for the calling class.
       #   
-      #   Amazon::MWS::Base.establish_connection!(
+      #   AmazonMWS::Base.establish_connection!(
       #     :access_key_id     => '...', 
       #     :secret_access_key => '...',
       #     :merchant_id       => '...',
@@ -41,7 +41,7 @@ class Amazon::MWS::Connection
         # After you've already established the default connection, just specify 
         # the difference for subsequent connections
         #options = default_connection.options.merge(options) if connected?
-        connections[connection_name] = Amazon::MWS::Connection.connect(options)
+        connections[connection_name] = AmazonMWS::Connection.connect(options)
       end
     
       # Returns the connection for the current class, or Base's default connection if the current class does not
@@ -52,7 +52,7 @@ class Amazon::MWS::Connection
         if connected?
           connections[connection_name] || default_connection
         else
-          raise Amazon::MWS::NoConnectionEstablished.new
+          raise AmazonMWS::NoConnectionEstablished.new
         end
       end
     
@@ -81,7 +81,7 @@ class Amazon::MWS::Connection
       end
 
       def default_connection_name
-        'Amazon::MWS::Base'
+        'AmazonMWS::Base'
       end
 
       def default_connection

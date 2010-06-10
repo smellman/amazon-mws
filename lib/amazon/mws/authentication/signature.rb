@@ -1,4 +1,4 @@
-class Amazon::MWS::Authentication
+class AmazonMWS::Authentication
   
   class Signature < String#:nodoc:
     extend Memoizable
@@ -26,7 +26,7 @@ class Amazon::MWS::Authentication
     
     def string_to_sign(verb, querystring)
       verb   = verb.to_s.upcase
-      string = "#{verb}\n#{Amazon::MWS::DEFAULT_HOST}\n/\n#{querystring}"
+      string = "#{verb}\n#{AmazonMWS::DEFAULT_HOST}\n/\n#{querystring}"
     end
     
     memoize :string_to_sign

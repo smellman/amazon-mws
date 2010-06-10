@@ -9,7 +9,7 @@ class QueryStringTest < Test::Unit::TestCase
   end
   
   def test_expected_string
-    string = AWS::MWS::Authentication::QueryString.new(
+    string = AmazonMWS::Authentication::QueryString.new(
       :access_key => 'opensesame',
       :marketplace_id => '9876',
       :merchant_id => '12345',

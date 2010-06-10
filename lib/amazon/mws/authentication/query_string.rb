@@ -1,4 +1,4 @@
-class Amazon::MWS::Authentication  
+class AmazonMWS::Authentication  
   
   class QueryString < String
     def initialize(params = {})
@@ -9,7 +9,7 @@ class Amazon::MWS::Authentication
         'SignatureMethod'  => Signature::METHOD,
         'SignatureVersion' => Signature::VERSION,
         'Timestamp'        => Time.now.iso8601,
-        'Version'          => Amazon::MWS::Authentication::VERSION
+        'Version'          => AmazonMWS::Authentication::VERSION
       }
       
       # Add any params that are passed in via uri before calculating the signature

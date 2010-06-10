@@ -25,9 +25,7 @@ require 'mws/lib/extensions'
 require 'builder'
 #require_library_or_gem 'mime/types', 'mime-types' unless defined? MIME::Types
 
-module Amazon
-  module MWS
-  end
+module AmazonMWS
 end
 
 
@@ -59,12 +57,10 @@ require 'mws/authentication/query_string'
 require 'mws/authentication/signature'
 
 
-Amazon::MWS::Base.class_eval do
-  include Amazon::MWS::Feed
-  include Amazon::MWS::Report
+AmazonMWS::Base.class_eval do
+  include MWS::Feed
+  include MWS::Report
 end
-
-AWS = Amazon
 
 require_library_or_gem 'xmlsimple', 'xml-simple' unless defined? XmlSimple
 =begin

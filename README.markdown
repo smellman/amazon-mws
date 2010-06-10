@@ -12,7 +12,7 @@ TODO
 Intro
 ===========
 
-Amazon::MWS is a set of classes for using the Amazon Marketplace Web Service, a link to Amazon's Seller Central and to your Seller Central account.
+AmazonMWS is a set of classes for using the Amazon Marketplace Web Service, a link to Amazon's Seller Central and to your Seller Central account..
 
 This library is in active development, but should now work for the most part. If you would like to contribute to this project, please contact me.
 

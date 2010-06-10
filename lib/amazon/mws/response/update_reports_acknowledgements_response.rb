@@ -1,5 +1,4 @@
-module Amazon
-  module MWS
+module AmazonMWS
 
     class UpdateReportAcknowledgementsResponse < Response
       xml_name "UpdateReportAcknowledgementsResponse"
@@ -10,5 +9,4 @@ module Amazon
       xml_reader :request_id, :in => "ResponseMetadata"
     end
     
-  end
 end

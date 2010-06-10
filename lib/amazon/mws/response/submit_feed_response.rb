@@ -1,5 +1,4 @@
-module Amazon
-  module MWS
+module AmazonMWS
 
     class SubmitFeedResponse < Response
       xml_name "SubmitFeedResponse"
@@ -8,6 +7,5 @@ module Amazon
       xml_reader :feed_submission, :as => FeedSubmission, :in => result
       xml_reader :request_id, :in => "ResponseMetadata"
     end
-    
-  end
+
 end
