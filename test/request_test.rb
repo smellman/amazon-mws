@@ -7,7 +7,7 @@ class RequestTest < Test::Unit::TestCase
   def setup
     config = YAML.load_file( File.join(File.dirname(__FILE__), '../lib/amazon/mws.yml') )
     
-    @marketplace = AWS::MWS::Base.new(config['production'])
+    @marketplace = AmazonMWS::Base.new(config['production'])
   end
   
   def test_first

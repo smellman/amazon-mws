@@ -21,7 +21,7 @@ require 'roxml'
 
 
 $:.unshift(File.dirname(__FILE__))
-require 'mws/lib/extensions'
+require 'lib/extensions'
 require 'builder'
 #require_library_or_gem 'mime/types', 'mime-types' unless defined? MIME::Types
 
@@ -30,31 +30,31 @@ end
 
 
 
-require 'mws/lib/memoizable'
+require 'lib/memoizable'
 
-require 'mws/feed_builder'
-require 'mws/feed_enumerations'
-require 'mws/feed'
-require 'mws/report_enumerations'
-require 'mws/report'
+require 'feed_builder'
+require 'feed_enumerations'
+require 'feed'
+require 'report_enumerations'
+require 'report'
 
 
-require 'mws/response'
-require 'mws/feed_submission'
-require 'mws/report_request'
-require 'mws/report_info'
-require 'mws/report_schedule'
-Dir.glob(File.join(File.dirname(__FILE__), 'mws/response/*.rb')).each {|f| require f }
+require 'response'
+require 'feed_submission'
+require 'report_request'
+require 'report_info'
+require 'report_schedule'
+Dir.glob(File.join(File.dirname(__FILE__), 'response/*.rb')).each {|f| require f }
 
-require 'mws/base'
-require 'mws/version'
-require 'mws/exceptions'
-require 'mws/connection'
-require 'mws/connection/management'
-require 'mws/connection/request_builder'
-require 'mws/authentication'
-require 'mws/authentication/query_string'
-require 'mws/authentication/signature'
+require 'base'
+require 'version'
+require 'exceptions'
+require 'connection'
+require 'connection/management'
+require 'connection/request_builder'
+require 'authentication'
+require 'authentication/query_string'
+require 'authentication/signature'
 
 
 AmazonMWS::Base.class_eval do

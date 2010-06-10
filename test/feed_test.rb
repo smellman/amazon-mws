@@ -1,14 +1,14 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 # flatten the namespace
 require 'mocha'
-include AWS::MWS
+include AmazonMWS
 
 AmazonMWS::Base.debug = true
 
 class FeedTest < Test::Unit::TestCase 
   def setup
     config = YAML.load_file( File.join(File.dirname(__FILE__), 'test_config.yml') )
-    @marketplace = AWS::MWS::Base.new(config)
+    @marketplace = AmazonMWS::Base.new(config)
   end
   
   #def test_submit_feed
