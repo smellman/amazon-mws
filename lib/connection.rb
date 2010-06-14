@@ -7,6 +7,8 @@ module AmazonMWS
         new(options)
       end
     end
+
+    attr_accessor :merchant_id
     
     def initialize(params = {})
       # These values are essential to establishing a connection

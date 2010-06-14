@@ -36,17 +36,18 @@ class AmazonMWS::Connection
     end
     
     def add_user_agent
-      @request['User-Agent'] = "AmazonMWS/#{AmazonMWS::Version} (Language=Ruby)"
+      @request['User-Agent'] = "Amazon::MWS/#{AmazonMWS::Version} (Language=Ruby)"
       return self
     end
     
     def add_content_type
-      # nothing happening yet
+      @request['Content-Type'] = "text/xml"
       return self
     end
     
     def add_content_md5(body = "")
-      @request['Content-MD5'] = Base64.encode64(create_md5(body))
+      @request['Content-MD5'] = Base64.encode64(create_md5(body)).gsub("\n", "")
+      puts @request['Content-MD5']
       return self # chainable
     end  
     
@@ -56,12 +57,11 @@ class AmazonMWS::Connection
       
       # stream from file or in memory?
       if body.respond_to?(:read)
-        digest = body.each { |line| md5.update(line) }        
+        body.each { |line| md5.update(line) }        
       else
-        digest = md5.update(body)
+        md5.update(body)
       end
-      
-      return digest.hexdigest
+      return md5.digest
     end
   end
 end

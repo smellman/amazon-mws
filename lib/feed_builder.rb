@@ -18,7 +18,8 @@ module AmazonMWS
     end
     
     def render  
-      @xml.instruct!
+      #@xml.instruct!
+      @xml.instruct! :xml, :version=>"1.0"
       @xml.AmazonEnvelope("xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xsi:noNamespaceSchemaLocation"=>"amzn-envelope.xsd") do 
         render_envelope(:message_type => @message_type)
         # header
@@ -30,16 +31,17 @@ module AmazonMWS
 
     def render_header(params = {})
       @xml.Header do
-        @xml.MerchantIdentifier "merchant_id"
+        @xml.DocumentVersion 1.01
+        @xml.MerchantIdentifier params[:merchant_id]
       end
     end
 
     def render_envelope(params = {})      
-      @xml.EffectiveDate Time.now
-      @xml.MessageID
+      #@xml.EffectiveDate Time.now
+      #@xml.MessageID 1
       @xml.MessageType(params[:message_type])
       @xml.OperationType(params[:operation_type]) if params[:operation_type]
-      @xml.PurgeAndReplace(params[:purge] || false)
+      #@xml.PurgeAndReplace(params[:purge] || false)
     end
 
     def render_message(message, params = {})

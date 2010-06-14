@@ -13,19 +13,23 @@ module AmazonMWS
     # hour. Feed size is limited to 2,147,483,647 bytes (2^32 -1) per
     # feed.
     
-    def submit_feed(feed_type, message_type, message = {})
+    def submit_feed(feed_type, message_type, message = {}, params = {})
       message_type= message_type.to_s.camelize
       raise InvalidMessageType if !MESSAGE_TYPES.include?(message_type)
 
-      body = AmazonMWS::FeedBuilder.new(message_type, message)
+      body = AmazonMWS::FeedBuilder.new(message_type, message, params)
+      
+      body.render
+      puts body.xml.target!
       
       response = 
       post("/", {
         "Action"   => "SubmitFeed", 
         "FeedType" => FEED_TYPES[feed_type]
-      }, body)
+      }, body.xml.target!)
     
-      result = SubmitFeedResponse.format(response)
+      #result = SubmitFeedResponse.format(response)
+      response
     end
   
     alias_method :submit, :submit_feed
