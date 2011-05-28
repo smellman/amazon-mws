@@ -147,6 +147,9 @@ Gem::Specification.new do |s|
      "test/signature_test.rb",
      "test/test_helper.rb"
   ]
+  s.add_dependency('roxml')
+  s.add_dependency('xml-simple')
+
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
