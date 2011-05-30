@@ -28,19 +28,19 @@ Enjoy!
 Usage
 ===========
 
-require "amazonmws"
+    require "amazonmws"
 
-mws = AmazonMWS::Base.new(
-   "access_key"=>"MY_KEY",
-   "secret_access_key"=>"MY_SECRET",
-   "merchant_id"=>"MY_MERCHANT",
-   "marketplace_id"=>"MARKETPLACE"
-)
+    mws = AmazonMWS::Base.new(
+       "access_key"=>"MY_KEY",
+       "secret_access_key"=>"MY_SECRET",
+       "merchant_id"=>"MY_MERCHANT",
+       "marketplace_id"=>"MARKETPLACE"
+    )
 
-response = mws.get_report_request_count
+    response = mws.get_report_request_count
 
-if response.accessors.include?("code")
-   puts "Error: #{response.code}. Message: #{response.message}"
-else
-   puts "Number of requests is #{response.count}"
-end
+    if response.accessors.include?("code")
+       puts "Error: #{response.code}. Message: #{response.message}"
+    else
+       puts "Number of requests is #{response.count}"
+    end
