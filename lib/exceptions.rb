@@ -71,7 +71,7 @@ module AmazonMWS
   # Raised if a request is attempted before any connections have been established.
   class NoConnectionEstablished < MWSException
     def initialize
-      super("\nPlease use AmazonMWS::Base.establish_connection! before making API calls.")
+      super("\nPlease use initialize AmazonMWS::Base.establish_connection! before making API calls.")
     end
   end
         
