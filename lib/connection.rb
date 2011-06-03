@@ -79,12 +79,12 @@ module AmazonMWS
     # Takes the http method and the query string of the request and returns the authenticated query string
     def authenticate_query_string(verb, query_params = {})
       Authentication::QueryString.new(
-          :verb => verb,
-          :query_params => query_params,
-          :access_key => @access_key,
+          :verb              => verb,
+          :query_params      => query_params,
+          :access_key        => @access_key,
           :secret_access_key => @secret_access_key,
-          :merchant_id => @merchant_id,
-          :marketplace_id => @marketplace_id
+          :merchant_id       => @merchant_id,
+          :marketplace_id    => @marketplace_id
       )
     end
 
