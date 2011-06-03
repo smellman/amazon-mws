@@ -12,13 +12,13 @@ module AmazonMWS
 
     def initialize(params = {})
       # These values are essential to establishing a connection
-      @server = params['server'] || AmazonMWS::DEFAULT_HOST
-      @persistent = params['persistent'] || false
+      @server            = params['server'] || AmazonMWS::DEFAULT_HOST
+      @persistent        = params['persistent'] || false
       # These values are essential to signing requests
-      @access_key = params['access_key']
+      @access_key        = params['access_key']
       @secret_access_key = params['secret_access_key']
-      @merchant_id = params['merchant_id']
-      @marketplace_id = params['marketplace_id']
+      @merchant_id       = params['merchant_id']
+      @marketplace_id    = params['marketplace_id']
 
       raise AmazonMWS::MissingConnectionOptions.new("Missing required attribute") if [@access_key, @secret_access_key, @merchant_id, @marketplace_id].any? { |option| option.nil? }
 
@@ -27,8 +27,8 @@ module AmazonMWS
 
     # Create the Net::HTTP object to use for this connection
     def connect
-      http = Net::HTTP.new(@server, 443)
-      http.use_ssl = true
+      http             = Net::HTTP.new(@server, 443)
+      http.use_ssl     = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
       #SECURITY HOLE
