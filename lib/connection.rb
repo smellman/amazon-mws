@@ -30,11 +30,6 @@ module AmazonMWS
       http             = Net::HTTP.new(@server, 443)
       http.use_ssl     = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-      #SECURITY HOLE
-      http.set_debug_output($stdout)
-
-
       return http
     end
 
